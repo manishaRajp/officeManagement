@@ -11,7 +11,6 @@
                     alt="logo"></a>
         </div>
     </div>
-
     <div class="sidebar-inner slimscrollleft">
 
         <div id="sidebar-menu">
@@ -24,13 +23,15 @@
                         <span> Dashboard <span class="badge badge-success badge-pill float-right"></span></span>
                     </a>
                 </li>
-                <li><a class="waves-effect" href=""><i
-                            class="mdi mdi-account-plus"></i><span>Doctor</span></a></li>
-                <li><a class="waves-effect" href=""><i
-                            class="mdi mdi-alarm-plus"></i><span>Appoinement</span></a></li>
-
-                <li><a class="waves-effect" href=""><i
+                <li><a class="waves-effect" href="{{ route('admin.department.index') }}"><i
                             class="mdi mdi-bookmark"></i><span>Department</span></a></li>
+                <li><a class="waves-effect" href="{{ route('admin.system-category.index') }}"><i
+                            class=" mdi mdi-account-plus"></i><span>Category List</span></a></li>
+                <li><a class="waves-effect" href="{{ route('admin.system.index') }}"><i
+                            class="mdi mdi-alarm-plus"></i><span>System</span></a></li>
+
+                <li><a class="waves-effect" href="{{ route('admin.employee.index') }}"><i
+                            class=" mdi mdi-account-plus"></i><span>Employee</span></a></li>
             </ul>
         </div>
         <div class="clearfix"></div>

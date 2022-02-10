@@ -5,13 +5,19 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\ProfileUpdate;
 use App\Models\Admin;
+use App\Models\Department;
+use App\Models\Employee;
+use App\Models\System;
 use Illuminate\Http\Request;
 
 class DashboarController extends Controller
 {
     public function department()
     {
-        return view('admin.dashboard.index');
+        $dept = Department::get();
+        $system = System::get();
+        $employee = Employee::get();
+        return view('admin.dashboard.index',compact('dept','system','employee'));
     }
 
     public function profileview()

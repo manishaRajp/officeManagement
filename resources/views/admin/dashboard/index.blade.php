@@ -7,7 +7,7 @@
                 <div class="col-sm-12">
                     <div class="float-right page-breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Drixo</a></li>
+                            <li class="breadcrumb-item"><a href="#">Admin</a></li>
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ol>
                     </div>
@@ -21,7 +21,7 @@
                     <div class="card mini-stat m-b-30">
                         <div class="p-3 bg-primary text-white">
                             <div class="mini-stat-icon">
-                                <i class="mdi  float-right mb-0"></i>
+                                <i class="mdi  float-right mb-0">{{$dept->count() }}</i>
                             </div>
                             <h6 class="text-uppercase mb-0">Department</h6>
                         </div>
@@ -31,9 +31,9 @@
                     <div class="card mini-stat m-b-30">
                         <div class="p-3 bg-primary text-white">
                             <div class="mini-stat-icon">
-                                <i class="mdi  float-right mb-0"></i>
+                                <i class="mdi  float-right mb-0">{{$system->count()}}</i>
                             </div>
-                            <h6 class="text-uppercase mb-0">Doctor</h6>
+                            <h6 class="text-uppercase mb-0">System</h6>
                         </div>
                     </div>
                 </div>
@@ -41,19 +41,9 @@
                     <div class="card mini-stat m-b-30">
                         <div class="p-3 bg-primary text-white">
                             <div class="mini-stat-icon">
-                                <i class="mdi  float-right mb-0"></i>
+                                <i class="mdi  float-right mb-0">{{$employee->count()}}</i>
                             </div>
-                            <h6 class="text-uppercase mb-0">Patient</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-6">
-                    <div class="card mini-stat m-b-30">
-                        <div class="p-3 bg-primary text-white">
-                            <div class="mini-stat-icon">
-                                <i class="mdi  float-right mb-0"></i>
-                            </div>
-                            <h6 class="text-uppercase mb-0">Appoinment</h6>
+                            <h6 class="text-uppercase mb-0">Employee</h6>
                         </div>
                     </div>
                 </div>
@@ -97,20 +87,22 @@
                 </head>
 
                 <body>
-                    <h2>Todays Appoinment Doctor Wise</h2>
+                    <h2>** System Deatils **</h2>
                     <table>
                         <tr>
                             <th>Sr.No</th>
-                            <th>Doctor</th>
-                            <th>Total Appoinment</th>
+                            <th>System Name</th>
+                            <th>Assinged</th>
                         </tr>
 
-                       
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
+                       @foreach ($system as $value )
+                           
+                       <tr>
+                           <td></td>
+                           <td>{{$value['name']}}</td>
+                           <td>{{$value['status']==1?'Allocated':'Free'}}</td>
+                        </tr>
+                        @endforeach
                        
                     </table>
 
